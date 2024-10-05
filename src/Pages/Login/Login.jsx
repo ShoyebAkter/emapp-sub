@@ -87,18 +87,7 @@ const Login = () => {
                   Sign In
                 </button>
               </div>
-              <p className="text-sm text-white text-center">
-                Want Subscription?{" "}
-                <NavLink to="/Subscription" className="text-blue-700">
-                  Subscription
-                </NavLink>
-              </p>
-              <p className="text-sm text-white text-center pt-5">
-                Go back to{" "}
-                <NavLink to="/" className="text-blue-700">
-                  Home
-                </NavLink>
-              </p>
+              
               
             </form>
           </div>
