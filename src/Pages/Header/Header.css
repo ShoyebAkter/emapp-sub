@@ -1,0 +1,243 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  nav a{
+      text-decoration: none;
+      color: #4c4c4c;
+      padding-inline: 30px;
+      text-align: center;
+      font-size: 16px;
+  }
+  nav a:hover{
+      color:#439541
+  }
+  .navbarSec{
+    padding-left: 50px;
+    padding-right: 20px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      
+  }
+  .loginnavbarSec{
+    padding-left: 20px;
+    padding-right: 50px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      
+  }
+  .name{
+      color: rgb(130, 124, 124);
+      font-size:25px;
+      font-weight: 500;
+      text-align: center;
+  }
+  .newLink{
+    background-color: #294F41;
+    padding: 15px;
+    color: white;
+  }
+  .dropdown-content {
+      background-color: white; /* Set background color to white */
+      color: black; /* Set text color to black */
+  }
+  .header-fixed{
+      padding: 15px;
+      box-shadow:0 5px 5px #ccc;
+      background-color: #fff;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+  }
+  .header-fix{
+      padding: 15px;
+      box-shadow:0 5px 5px #ccc;
+      background-color: #fff;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      
+  }
+  .headerlogo{
+      width: 80px;
+  }
+  .hamburger-menu {
+      height: 0;
+      width: 0;
+      display: none;
+      cursor: pointer;
+    }
+    
+    /* Style the navigation items when the menu is open */
+    .header-fixed nav.open {
+      display: flex;
+    }
+    
+  .links{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  }
+  .sidebar{
+    height: 0;
+    width: 0;
+    display: none;
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    .logoutBtn{
+      display: none;
+    }
+    
+    .header-fixed{
+      box-shadow:0 5px 5px #ccc;
+      background-color: #fff;
+      
+  }
+  .rightDiv{
+    position: absolute; /* or 'fixed' if you want it to stay in place on scroll */
+      top: 0; /* or use bottom: 0; for the bottom right corner */
+      right: 0;
+  }
+  .mobilestyle{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .sidebar {
+    display: block;
+    height: 450px;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    right: 0px;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: width 0.3s;
+    padding-top: 60px;
+    color: #000000;
+    margin-right: 0px;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: 0.3s;
+    border-bottom: 1px solid #f1f1f1;
+    margin-bottom: 5px;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 36px;
+    margin-right: 20px;
+    border-bottom: none;
+  }
+  
+  
+  
+      .header-fixed nav {
+          display: flex;
+  
+        }
+      
+        .header-fixed nav a {
+          margin: 10px 0;
+        }
+      
+         .hamburger-menu {
+          margin-top: 5px;
+          margin-right: 20px;
+          position: relative;
+          display: inline-block;
+          width: 40px;
+          height: 40px; /* Show the hamburger menu button */
+        }
+      
+        .navbarSec div{
+          display: none;
+        }
+        .header-fixed nav.open{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .header-fixed nav.open a {
+          display: block; /* Show navigation items when the menu is open */
+        }
+      .links{
+          display: flex;
+          flex-direction: column;
+          align-items: normal;
+      }
+      .header-fixed{
+          padding-block: 10px;
+          padding-inline: 25px;
+      box-shadow:none;
+      position: absolute;
+    z-index: 0;
+      }
+      .navbarSec{
+          display: flex;
+          justify-content: space-between;
+          padding-right: 0px;
+          padding-left: 0px;
+      }
+      nav a {
+          margin-right: 5px;
+          padding: 0px; /* Adjust padding for better mobile layout */
+          font-size: 8px; /* Reduce font size for better mobile readability */
+      }
+      .headerlogo{
+        width: 40px;
+        height: 40px;
+          /* display: none; */
+      }
+      
+      .name {
+          font-size: 20px; /* Adjust font size for better mobile readability */
+      }
+  
+     .navbarSec a{
+      display: none;
+     }
+  
+  }
+  
+  @media only screen and (min-width: 769px) and (max-width: 1075px){
+    nav a{
+      text-decoration: none;
+      color: #4c4c4c;
+      padding-inline: 15px;
+      text-align: center;
+      font-size: 8px;
+  }
+  .navbarSec{
+    padding-inline: 50px;
+  }
+  }
+  @media only screen and (min-width: 1076px) and (max-width: 1412px){
+    nav a{
+      text-decoration: none;
+      color: #4c4c4c;
+      padding-inline: 15px;
+      text-align: center;
+      font-size: 12px;
+  }
+  .navbarSec{
+    padding-inline: 100px;
+  }
+  }
