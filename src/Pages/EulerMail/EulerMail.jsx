@@ -4,7 +4,6 @@ import Header from '../Header/Header'
 const EulerMail = () => {
   return (
     <div>
-      <Header/>
     </div>
   )
 }

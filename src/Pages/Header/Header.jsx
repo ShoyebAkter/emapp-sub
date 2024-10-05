@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
 import "./Header.css";
 // import { signOut } from 'firebase/auth';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect, useState } from "react";
@@ -9,20 +9,23 @@ import { CiUser } from "react-icons/ci";
 // import { callApi } from "../EulerMail/getSalesData";
 
 const Header = () => {
-    const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const [activeLink, setActiveLink] = useState("");
-  const [data,setData]=useState([]);
-    // const shopify=localStorage.getItem("shopify");
-    // useEffect(()=>{
-    //   if(shopify){
-    //     callApi("https://emapp-backend.vercel.app/subscription/database",setData)
-    //   }
-    // },[])
-    // console.log(data)
-    // const foundObject = user && data.find(obj => obj?.email === user.email);
-    // // console.log(foundObject)
-    // foundObject && localStorage.setItem("companyName",foundObject.companyName)
+  const [data, setData] = useState([]);
+
+  const location = useLocation();
+console.log(location.pathname)
+  // const shopify=localStorage.getItem("shopify");
+  // useEffect(()=>{
+  //   if(shopify){
+  //     callApi("https://emapp-backend.vercel.app/subscription/database",setData)
+  //   }
+  // },[])
+  // console.log(data)
+  // const foundObject = user && data.find(obj => obj?.email === user.email);
+  // // console.log(foundObject)
+  // foundObject && localStorage.setItem("companyName",foundObject.companyName)
   const toggleMenu = () => {
     document.getElementById("menusidebar").style.width = "300px";
   };
@@ -42,88 +45,95 @@ const Header = () => {
     // localStorage.removeItem('access_token');
   };
   return (
-    <div>
-      {user ? (
+    <div className="">
+      {location.pathname !== '/' && user ? (
         <div className="mobileHeader">
           <div className="mobilestyle">
-          <header className={`header-fixed`}>
-            <nav className={`navbarSec`}>
-            
-              <img className="headerlogo" src="Logo_Iso_Green.jpg" />
-            
-            
-              <Link
-                to="/eulermail"
-                onClick={() => handleLinkClick("/eulermail")}
-                className={activeLink === "/eulermail" ? "font-bold" : ""}
-              >
-                EulerMail
-              </Link>
-              <Link
-                to="/orders"
-                onClick={() => handleLinkClick("/orders")}
-                className={activeLink === "/orders" ? "font-bold" : ""}
-              >
-                Orders
-              </Link>
-              <Link
-                to="/businessoverview"
-                onClick={() => handleLinkClick("/businessoverview")}
-                className={
-                  activeLink === "/businessoverview" ? "font-bold" : ""
-                }
-              >
-                Business Overview
-              </Link>
-              <Link
-                to="/customerBehaviour"
-                onClick={() => handleLinkClick("/customerBehaviour")}
-                className={
-                  activeLink === "/customerBehaviour" ? "font-bold" : ""
-                }
-              >
-                Customer Behaviour
-              </Link>
-              <Link
-                to="/campaignresult"
-                onClick={() => handleLinkClick("/campaignresult")}
-                className={activeLink === "/campaignresult" ? "font-bold" : ""}
-              >
-                Campaign Result
-              </Link>
-              <Link
-                to="/socialmedia"
-                onClick={() => handleLinkClick("/socialmedia")}
-                className={activeLink === "/socialmedia" ? "font-bold" : ""}
-              >
-                Social Media
-              </Link>
-              <Link
-                to="/campaignerdesign"
-                onClick={() => handleLinkClick("/campaignerdesign")}
-                className={
-                  activeLink === "/campaignerdesign"
-                    ? "font-bold text-white hover:text-white  py-1 px-4 rounded-full shadow-lg"
-                    : "text-white hover:text-white  py-1 px-4 rounded-full shadow-lg"
-                }
-                style={{
-                  background: "#294F41",
-                  boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)",
-                }}
-              >
-                Campaign Designer
-              </Link>
-              
+            <header className={`header-fixed`}>
+              <nav className={`navbarSec`}>
+                <img className="headerlogo" src="Logo_Iso_Green.jpg" />
 
+                <Link
+                  to="/eulermail"
+                  onClick={() => handleLinkClick("/eulermail")}
+                  className={activeLink === "/eulermail" ? "font-bold" : ""}
+                >
+                  EulerMail
+                </Link>
+                <Link
+                  to="/orders"
+                  onClick={() => handleLinkClick("/orders")}
+                  className={activeLink === "/orders" ? "font-bold" : ""}
+                >
+                  Orders
+                </Link>
+                <Link
+                  to="/businessoverview"
+                  onClick={() => handleLinkClick("/businessoverview")}
+                  className={
+                    activeLink === "/businessoverview" ? "font-bold" : ""
+                  }
+                >
+                  Business Overview
+                </Link>
+                <Link
+                  to="/customerBehaviour"
+                  onClick={() => handleLinkClick("/customerBehaviour")}
+                  className={
+                    activeLink === "/customerBehaviour" ? "font-bold" : ""
+                  }
+                >
+                  Customer Behaviour
+                </Link>
+                <Link
+                  to="/campaignresult"
+                  onClick={() => handleLinkClick("/campaignresult")}
+                  className={
+                    activeLink === "/campaignresult" ? "font-bold" : ""
+                  }
+                >
+                  Campaign Result
+                </Link>
+                <Link
+                  to="/socialmedia"
+                  onClick={() => handleLinkClick("/socialmedia")}
+                  className={activeLink === "/socialmedia" ? "font-bold" : ""}
+                >
+                  Social Media
+                </Link>
+                <Link
+                  to="/campaignerdesign"
+                  onClick={() => handleLinkClick("/campaignerdesign")}
+                  className={
+                    activeLink === "/campaignerdesign"
+                      ? "font-bold text-white hover:text-white  py-1 px-4 rounded-full shadow-lg"
+                      : "text-white hover:text-white  py-1 px-4 rounded-full shadow-lg"
+                  }
+                  style={{
+                    background: "#294F41",
+                    boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)",
+                  }}
+                >
+                  Campaign Designer
+                </Link>
 
-              {/* <div className="mobileDropdown">
+                {/* <button
+                  onClick={logout}
+                  className="mt-3 logoutBtn bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                >
+                  Log Out
+                </button> */}
+
+                <div className="mobileDropdown">
               <div className=" dropdown dropdown-end">
-                <div tabIndex={0} role="button" className={foundObject?.photoUrl ? "" : "newLink rounded-3xl m-1"}>
-                {
+                <div tabIndex={0} role="button" className="newLink rounded-3xl m-1">
+                {/* <div tabIndex={0} role="button" className={foundObject?.photoUrl ? "" : "newLink rounded-3xl m-1"}> */}
+                {/* {
                   foundObject?.photoUrl ? <img style={{"width":"40px","height":"40px","borderRadius":"50%"}} src={foundObject?.photoUrl} alt=""/>
                   :
                   <CiUser />
-                }
+                } */}
+                <CiUser />
                 </div>
                 <ul
                   tabIndex={0}
@@ -146,9 +156,9 @@ const Header = () => {
                   </li>
                 </ul>
               </div>
-              </div> */}
-            </nav>
-          </header>
+              </div>
+              </nav>
+            </header>
           </div>
           <div className="rightDiv">
             <a
@@ -224,11 +234,7 @@ const Header = () => {
               >
                 Campaign Designer
               </Link>
-              <Link
-                to="/settings"
-              >
-                Settings
-              </Link>
+              <Link to="/settings">Settings</Link>
               <button
                 onClick={logout}
                 className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
@@ -240,7 +246,7 @@ const Header = () => {
         </div>
       ) : null}
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
