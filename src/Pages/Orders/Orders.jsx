@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import "./Booking.css";
-import Header from "../Header/Header";
+import { useNavigate } from "react-router-dom";
+
 const Orders = () => {
   const [data, setData] = useState([]);
+  const navigate=useNavigate()
   useEffect(() => {
-    fetch("https://vic-server.vercel.app/bookingData")
+    fetch("https://emapp-sub-server.vercel.app/bookingData")
       .then((res) => res.json())
       .then((result) => {
         // Filter out objects that have the action: "deleted"
@@ -16,37 +18,8 @@ const Orders = () => {
   // console.log(data)
 
   const handleDelete = async (id, email) => {
-    try {
-      const response = await fetch(
-        "https://vic-server.vercel.app/deleteBooking",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ id }),
-        }
-      );
-
-      const data = await response.json();
-      if (response.ok) {
-        const thanksData = {
-          email: email,
-        };
-        fetch("https://vic-server.vercel.app/sendThanksemail", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(thanksData),
-        }).console.log(data.message); // Booking marked as deleted
-        // You may want to update the UI accordingly
-      } else {
-        console.error(data.message); // Handle the error
-      }
-    } catch (error) {
-      console.error("Error deleting booking:", error);
-    }
+    navigate(`/confirmOrders/${id}`);
+    
   };
   return (
     <div>
@@ -70,7 +43,7 @@ const Orders = () => {
                         Email
                       </th>
                       <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                        Contact Number
+                        Selected Center
                       </th>
                       <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                         Date
@@ -79,10 +52,16 @@ const Orders = () => {
                         Time
                       </th>
                       <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                        Car Brand
+                      </th>
+                      <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                         Car Model
                       </th>
                       <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                        Car Service
+                        Car PlateNo
+                      </th>
+                      <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                        Car Year
                       </th>
                       <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                         Action
@@ -111,7 +90,7 @@ const Orders = () => {
                         </td>
                         <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                           <p className="text-gray-900 whitespace-no-wrap">
-                            {invoice.contact}
+                            {invoice.selectedCenter}
                           </p>
                         </td>
                         <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -131,10 +110,16 @@ const Orders = () => {
                           {invoice.time}
                         </td>
                         <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
-                          {invoice.car}
+                          {invoice.brand}
                         </td>
                         <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
-                          {invoice.service}
+                          {invoice.carModel}
+                        </td>
+                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+                          {invoice.plateNo}
+                        </td>
+                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+                          {invoice.year}
                         </td>
                         <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
                           <span

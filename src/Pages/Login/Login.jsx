@@ -25,7 +25,7 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
     //    console.log(user)
-    navigate('/eulerMail')
+    navigate('/')
       }).catch((error) => {
         setErrors(error)
       });

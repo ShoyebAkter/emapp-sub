@@ -15,7 +15,7 @@ const Header = () => {
   const [data, setData] = useState([]);
 
   const location = useLocation();
-console.log(location.pathname)
+// console.log(location.pathname)
   // const shopify=localStorage.getItem("shopify");
   // useEffect(()=>{
   //   if(shopify){
@@ -38,7 +38,7 @@ console.log(location.pathname)
   // console.log(user);
   const logout = () => {
     signOut(auth);
-    navigate("/");
+    navigate("/login");
     // localStorage.removeItem('companyName');
     // localStorage.removeItem('shopify');
     // localStorage.removeItem('shopifyEmail');
@@ -46,7 +46,7 @@ console.log(location.pathname)
   };
   return (
     <div className="">
-      {location.pathname !== '/' && user ? (
+      {location.pathname !== '/login' && user ? (
         <div className="mobileHeader">
           <div className="mobilestyle">
             <header className={`header-fixed`}>
@@ -55,8 +55,8 @@ console.log(location.pathname)
 
                 <Link
                   to="/eulermail"
-                  onClick={() => handleLinkClick("/eulermail")}
-                  className={activeLink === "/eulermail" ? "font-bold" : ""}
+                  onClick={() => handleLinkClick("/")}
+                  className={activeLink === "/" ? "font-bold" : ""}
                 >
                   EulerMail
                 </Link>
