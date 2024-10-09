@@ -1,18 +1,59 @@
-import { BarChart,CartesianGrid, Legend,XAxis, Tooltip,Bar, YAxis } from "recharts";
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
-const CustomerBehaviour = ({data}) => {
+// Register the necessary chart.js components
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+const CustomerBehaviour = ( ) => {
+  const data = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+    datasets: [
+      {
+        label: 'Sales 2024 (in USD)',
+        data: [12000, 19000, 3000, 5000, 20000, 30000],
+        borderColor: '#649445',
+                backgroundColor: '#649445',
+      },
+    ],
+  };
+
+  const options = {
+    indexAxis: 'y',
+        elements: {
+            bar: {
+                borderWidth: 2,
+            },
+        },
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top', // Legend position
+      },
+      title: {
+        display: true,
+        text: 'Monthly Sales Data for 2024',
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color:'black'
+        },
+      },
+      y: {
+        ticks: {
+          color:'black'
+        },
+      },
+    },
+  };
   return (
     <div>
-    <div className="text-center text-xl font-bold my-3">Customer Behaviour</div>
-      <BarChart width={730} height={250} data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
-        <Bar dataKey="uv" fill="#82ca9d" />
-      </BarChart>
+    <div>
+            <h1 style={{"color":"#294F41","width":"300px"}} className="mx-auto font-bold  text-center text-xl  cursor-pointer"> Customer Behaviour</h1>
+            <Bar options={options} height={300} width={500} data={data} />
+            </div>
     </div>
   );
 };

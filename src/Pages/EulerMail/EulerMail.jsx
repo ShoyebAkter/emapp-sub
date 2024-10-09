@@ -51,7 +51,7 @@ const EulerMail = () => {
     },
   ];
   return (
-    <div className='pt-32'>
+    <div className='flex flex-col gap-10 pt-32'>
       <div className='flex justify-around'>
         <BusinessOverview data={data}/>
         <CustomerBehaviour data={data}/>

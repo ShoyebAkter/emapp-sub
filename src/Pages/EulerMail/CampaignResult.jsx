@@ -1,28 +1,73 @@
 import {
-  BarChart,
-  CartesianGrid,
-  Legend,
-  XAxis,
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
   Tooltip,
-  Bar,
-  YAxis,
-} from "recharts";
+  Legend,
+} from 'chart.js';
+import { useEffect, useState } from 'react';
+import { Bar } from 'react-chartjs-2';
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
-const CampaignResult = ({ data }) => {
+const CampaignResult = () => {
+  const data = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+    datasets: [
+      {
+        label: 'Sales 2024 (in USD)',
+        data: [12000, 19000, 3000, 5000, 20000, 30000],
+        backgroundColor: '#659148',
+            borderRadius: 15,
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top', // Legend position
+      },
+      title: {
+        display: true,
+        text: 'Monthly Sales Data for 2024',
+        color: '#294F41',
+            font: {
+              size: 14,
+              family: 'Montserrat',
+              
+              weight: 700 // specify the font size here
+            },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color:'black'
+        },
+      },
+      y: {
+        ticks: {
+          color:'black'
+        },
+      },
+    },
+  };
   return (
     <div>
-        <div className="text-center text-xl font-bold my-3">CampaignResult</div>
-      <BarChart layout="vertical" width={700} height={350} data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        {/* XAxis should represent the numeric data */}
-        <XAxis type="number" />
-        {/* YAxis should represent the categorical data */}
-        <YAxis type="category" dataKey="name" />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
-        <Bar dataKey="uv" fill="#82ca9d" />
-      </BarChart>
+      <div>
+            <h1 style={{"color":"#294F41","width":"300px"}} className="mx-auto font-bold  text-center text-xl  cursor-pointer"> Customer Behaviour</h1>
+            <Bar options={options} height={350} width={500} data={data} />
+            </div>
     </div>
   );
 };

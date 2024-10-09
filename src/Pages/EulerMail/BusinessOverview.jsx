@@ -1,31 +1,83 @@
 import {
-    LineChart,
-    CartesianGrid,
-    XAxis,
-    YAxis,
-    Tooltip,
-    Legend,
-    Line
-  } from "recharts";
-const BusinessOverview = ({data}) => {
-  
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Line } from "react-chartjs-2";
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+const BusinessOverview = () => {
+  const data = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "Sales",
+        data: [65, 59, 80, 81, 56, 55, 40],
+        
+        borderColor: "#649445",
+              backgroundColor: "#649445",
+        tension: 0.1,
+      },
+    ],
+  };
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Monthly Sales",
+        color: '#294F41',
+        font: {
+          size: 14,
+          family: 'Montserrat',
+          
+          weight: 700 // specify the font size here
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color:'black'
+        },
+      },
+      y: {
+        ticks: {
+          color:'black'
+        },
+      },
+    },
+  };
   return (
     <div>
-    <div className="text-center text-xl font-bold my-3">Business Overview</div>
-      <LineChart
-        width={730}
-        height={250}
-        data={data}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-      </LineChart>
+      <div>
+        <h1
+          style={{ color: "#294F41" }}
+          className="font-bold text-center text-xl  cursor-pointer"
+          onClick={() => navigate("/businessoverview")}
+        >
+          {" "}
+          Business Overview
+        </h1>
+        {/* <h1 style={{"color":"#294F41"}} className="font-bold text-center text-sm mt-2"  > Yearly Revenue</h1> */}
+
+        <Line options={options} height={300} width={500} data={data} />
+      </div>
     </div>
   );
 };

@@ -54,7 +54,7 @@ const Header = () => {
                 <img className="headerlogo" src="Logo_Iso_Green.jpg" />
 
                 <Link
-                  to="/eulermail"
+                  to="/"
                   onClick={() => handleLinkClick("/")}
                   className={activeLink === "/" ? "font-bold" : ""}
                 >
