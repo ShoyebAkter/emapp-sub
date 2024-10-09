@@ -1,0 +1,187 @@
+.overviewMain{
+    background-image: url('/appbg.png');
+    padding-top: 110px;
+}
+
+.topChart{
+    display: flex;
+    border-radius: 1rem/* 16px */;
+    margin-top: 1.25rem/* 20px */;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    gap:70px;
+    padding-right: 20px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.tableArea{
+    display: flex;
+    width:1400px;
+    height: 500px;
+    border-radius: 1rem/* 16px */;
+    margin-top: 1.25rem/* 20px */;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    gap:70px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.greenDiv{
+    border-start-start-radius: 1rem/* 16px */;
+    border-end-start-radius: 1rem/* 16px */;
+    width: 30px;
+    background: #457048;
+}
+.questionMark {
+    width: 30px; /* You can adjust the width and height as needed */
+    height: 30px; /* You can adjust the width and height as needed */
+    background-color: #659248;
+    border-radius: 50%; /* This makes the div circular */
+    display: flex;
+    justify-content: center;
+    color: #ffff;
+}
+.circle-container {
+    position: relative;
+  }
+  .popup {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 300px;
+    top: -130px; /* Adjust the distance from the top */
+    left: 50%; /* Adjust the horizontal position */
+    transform: translateX(-60%);
+    background-color: #ffff; /* Background color of the popup */
+     /* Text color of the popup */
+    padding: 5px 10px; /* Adjust padding as needed */
+    border-radius: 10px; /* Adjust border radius as needed */
+    opacity: 1;
+    color: #000;
+    pointer-events: auto;
+    transition: opacity 0.3s ease; /* Transition for smooth appearance */
+  }
+  
+  .popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+.middleChart{
+    display: flex;
+    border-radius: 1rem/* 16px */;
+    margin-top: 1.25rem/* 20px */;
+    padding: 50px;
+    margin-bottom: 1.25rem/* 20px */;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    gap:20px;
+    width:1400px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.mapChartDiv{
+    width:50%;
+    height:80%;
+    padding-block: 20px;
+}
+.fullmapDiv{
+    width:100%;
+    height:100%;
+}
+.mapDiv{
+    display: flex;
+    width:100%;
+    height:100%;
+}
+@media only screen and (max-width: 768px) {
+    .mapChartDiv{
+        width:400px;
+    }
+    .tableArea{
+        display: flex;
+        width:550px;
+        height: 500px;
+        border-radius: 1rem/* 16px */;
+        margin-top: 1.25rem/* 20px */;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+        gap:70px;
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    }
+    .topChart{
+        display: flex;
+        flex-direction: column;
+        margin-inline: auto;
+        border-radius: 1rem/* 16px */;
+        margin-top: 1.25rem/* 20px */;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+        gap:10px;
+        width:400px;
+    }
+    .greenDiv{
+        display: none;
+    }
+    .middleChart{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-inline: auto;
+        border-radius: 1rem/* 16px */;
+        margin-top: 1.25rem/* 20px */;
+        margin-bottom: 1.25rem/* 20px */;
+        
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+        gap:100px;
+        width:400px;
+        height: 500px;
+    }
+    .leftGreenSec{
+        display: none;
+    }
+    .overviewMain{
+        height: 100%;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1405px){
+    .tableArea{
+        display: flex;
+        width:750px;
+        height: 500px;
+        border-radius: 1rem/* 16px */;
+        margin-top: 1.25rem/* 20px */;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+        gap:70px;
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    }
+    .topChart{
+        display: flex;
+        flex-direction: column;
+        margin-inline: auto;
+        border-radius: 1rem/* 16px */;
+        margin-top: 1.25rem/* 20px */;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+        gap:10px;
+        width:750px;
+    }
+    .greenDiv{
+        display: none;
+    }
+    .middleChart{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-inline: auto;
+        border-radius: 1rem/* 16px */;
+        margin-top: 1.25rem/* 20px */;
+        margin-bottom: 1.25rem/* 20px */;
+        height:300px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+        gap:100px;
+        width:750px;
+        height: 500px;
+    }
+    .leftGreenSec{
+        display: none;
+    }
+    .overviewMain{
+        height: 100%;
+    }
+}
