@@ -1,4 +1,6 @@
+import BottomChart from './BottomChart/BottomChart'
 import './Business.css'
+import MiddleChart from './MiddleChart/MiddleChart'
 import TopChart from './TopChart/TopChart'
 
 const Business = () => {
@@ -29,6 +31,8 @@ const Business = () => {
       </div>
       <div className="mx-auto mt-20">
         <TopChart/>
+        <MiddleChart/>
+        <BottomChart/>
       </div>
     </div>
   )
