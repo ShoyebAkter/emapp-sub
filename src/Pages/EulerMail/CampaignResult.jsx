@@ -63,7 +63,7 @@ const CampaignResult = () => {
     },
   };
   return (
-    <div>
+    <div className="boxcontainer CRborder-scoop p-2 ">
       <div>
             <h1 style={{"color":"#294F41","width":"300px"}} className="mx-auto font-bold  text-center text-xl  cursor-pointer"> Customer Behaviour</h1>
             <Bar options={options} height={350} width={500} data={data} />

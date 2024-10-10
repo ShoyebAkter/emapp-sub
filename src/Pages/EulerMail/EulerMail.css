@@ -1,0 +1,65 @@
+.centerImage{
+    position: absolute;
+    padding: 15px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #439541;
+    box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+    margin-block: auto;
+    transform: translate(0px,380px);
+    cursor: pointer;
+}
+
+.firstChartSec{
+    display: flex;
+    justify-content: center;
+    gap:150px;
+}
+.eulermailMain{
+    background-image: url('/appbg.png');
+    padding-top: 130px; /* Separate padding for the top */
+    padding-bottom: 32px; /* Separate padding for the bottom */
+    padding-left: 32px; /* Separate padding for the left */
+    padding-right: 32px;
+    background-size: cover;
+  /* Adjust to your needs */
+  background-repeat: no-repeat;
+  background-position: center center;
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .firstChartSec{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:50px;
+    }
+    .centerImage{
+        display: none;
+    }
+    .eulermailMain{
+        margin-top: 0.5rem/* 8px */;
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1200px){
+    .firstChartSec{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:50px;
+    }
+    .centerImage{
+        display: none;
+    }
+    .eulermailMain{
+        margin-top: 0.5rem/* 8px */;
+        height: 100%;
+    }
+}

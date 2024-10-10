@@ -1,11 +1,13 @@
-import React from 'react'
-import Header from '../Header/Header'
-import BusinessOverview from './BusinessOverview'
-import CustomerBehaviour from './CustomerBehaviour'
-import CampaignResult from './CampaignResult'
-import SocialMedia from './SocialMedia'
-
+import React from "react";
+import Header from "../Header/Header";
+import BusinessOverview from "./BusinessOverview";
+import CustomerBehaviour from "./CustomerBehaviour";
+import CampaignResult from "./CampaignResult";
+import SocialMedia from "./SocialMedia";
+import "./EulerMail.css";
+import { useNavigate } from "react-router-dom";
 const EulerMail = () => {
+  const navigate=useNavigate()
   const data = [
     {
       name: "Page A",
@@ -51,17 +53,33 @@ const EulerMail = () => {
     },
   ];
   return (
-    <div className='flex flex-col gap-10 pt-32'>
-      <div className='flex justify-around'>
-        <BusinessOverview data={data}/>
-        <CustomerBehaviour data={data}/>
+    <div className="eulermailMain">
+      <div className="flex text-black justify-around ">
+        <div style={{ color: "#439541" }} className="text-xl font-bold">
+          Company
+        </div>
+        <div className=" border-solid border-2 border-lime-500 rounded-xl px-2 text-lime-600">
+          General Report
+        </div>
       </div>
-      <div className='flex justify-around'>
-        <CampaignResult data={data}/>
-        <SocialMedia data={data}/>
+      <div className=" firstChartSec">
+        <div  className="flex flex-col py-5 ">
+          <BusinessOverview data={data} />
+          // <CustomerBehaviour data={data} />
+        </div>
+        <div
+          onClick={() => navigate("/campaignerdesign")}
+          className="centerImage"
+        >
+          <img src="/logo.png" alt="logo" />
+        </div>
+        <div  className="flex flex-col py-5">
+          <CampaignResult data={data} />
+          // <SocialMedia data={data} />
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default EulerMail
+export default EulerMail;

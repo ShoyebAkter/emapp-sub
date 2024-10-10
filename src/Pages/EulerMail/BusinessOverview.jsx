@@ -18,6 +18,7 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+import './BoxStyle.css'
 const BusinessOverview = () => {
   const data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -64,7 +65,7 @@ const BusinessOverview = () => {
     },
   };
   return (
-    <div>
+    <div className="boxcontainer border-scoop">
       <div>
         <h1
           style={{ color: "#294F41" }}
