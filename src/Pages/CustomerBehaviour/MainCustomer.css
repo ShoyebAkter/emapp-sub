@@ -1,0 +1,198 @@
+.customerBehaviourMain{
+    display: flex;
+    justify-content: space-between;
+    background-image: url('/appbg.png');
+    padding-top: 110px;
+}
+
+.leftSection{
+    padding-left: 10px;
+    padding-right: 50px;
+    padding-top: 2.5rem/* 40px */;
+    background: #FFFF;
+}
+.firstChartSection{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    border-radius: 1rem/* 16px */;
+    margin-bottom: 1.25rem/* 20px */;
+    padding: 1.25rem/* 20px */;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.cohortChartSection{
+    height: 575px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    border-radius: 1rem/* 16px */;
+    margin-bottom: 1.25rem/* 20px */;
+    padding: 1.25rem/* 20px */;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.clientSection{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    border-radius: 1rem/* 16px */;
+    margin-bottom: 1.25rem/* 20px */;
+    padding: 1.25rem/* 20px */;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.customerChartdiv{
+    --tw-bg-opacity: 1;
+    background-color: white;
+    border-radius: 1rem/* 16px */;
+    width: 500px;
+}
+.salesChart{
+    --tw-bg-opacity: 1;
+    background-color: white;
+    border-radius: 1rem/* 16px */;
+    width: 500px;
+}
+.engagementChart{
+    --tw-bg-opacity: 1;
+    background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+    border-radius: 1rem/* 16px */;
+    padding: 1.25rem/* 20px */;
+    margin-right: 1.25rem/* 20px */;
+    width: 500px;
+}
+.cohortChart{
+    width: 1200px;
+    height: 700px;
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.activecohortChart{
+    width: 1200px;
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+@media only screen and (max-width: 768px) {
+    .firstChartSection{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .insideFirstSec{
+        display: flex;
+        flex-direction: column;
+    }
+    .activecohortChart{
+        width: 500px;
+        --tw-text-opacity: 1;
+        color: rgb(0 0 0 / var(--tw-text-opacity));
+    }
+    .customerChartdiv{
+        --tw-bg-opacity: 1;
+        background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+        border-radius: 1rem/* 16px */;
+        padding: 1.25rem/* 20px */;
+        width: 320px;
+    }
+    .salesChart{
+        --tw-bg-opacity: 1;
+        background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+        border-radius: 1rem/* 16px */;
+        padding: 1.25rem/* 20px */;
+        width: 320px;
+    }
+    .engagementChart{
+        --tw-bg-opacity: 1;
+        background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+        border-radius: 1rem/* 16px */;
+        padding: 1.25rem/* 20px */;
+        margin-right: 1.25rem/* 20px */;
+        width: 320px;
+        margin-bottom: 10px;
+    }
+    .cohortChart{
+        width: 320px;
+        --tw-text-opacity: 1;
+        color: rgb(0 0 0 / var(--tw-text-opacity));
+        overflow: hidden;
+    }
+    .cohortChartSection{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 900px;
+    }
+    .leftSection{
+        display: none;
+    }
+    .customerBehaviourMain{
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1405px){
+    .clientSection{
+        border-radius: 1rem/* 16px */;
+        margin-bottom: 1.25rem/* 20px */;
+        padding: 1.25rem/* 20px */;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    }
+    .cohortChart{
+        width: 650px;
+        height: 700px;
+        --tw-text-opacity: 1;
+        color: rgb(0 0 0 / var(--tw-text-opacity));
+    }
+        .firstChartSection{
+            width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .insideFirstSec{
+            display: flex;
+            flex-direction: column;
+        }
+        .activecohortChart{
+            width: 650px;
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0 / var(--tw-text-opacity));
+        }
+        .customerChartdiv{
+            --tw-bg-opacity: 1;
+            background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+            border-radius: 1rem/* 16px */;
+            padding: 1.25rem/* 20px */;
+            width: 320px;
+        }
+        .salesChart{
+            --tw-bg-opacity: 1;
+            background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+            border-radius: 1rem/* 16px */;
+            padding: 1.25rem/* 20px */;
+            width: 320px;
+        }
+        .engagementChart{
+            --tw-bg-opacity: 1;
+            background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+            border-radius: 1rem/* 16px */;
+            padding: 1.25rem/* 20px */;
+            margin-right: 1.25rem/* 20px */;
+            width: 320px;
+            margin-bottom: 10px;
+        }
+        .leftSection{
+            display: none;
+        }
+        .customerBehaviourMain{
+            height: 100%;
+        }
+    
+}
