@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import './MainCustomer.css'
 import Customers from './Customers';
 import CustomersSegment from './CustomersSegment';
+import Sales from './Sales';
+import Engagement from './Engagement';
 const MainCustomerBehaviour = () => {
   const [data, setData] = useState([]);
   const [barName,setBarName]=useState("")
@@ -13,9 +15,8 @@ const MainCustomerBehaviour = () => {
   const [activeYear, setActiveYear] = useState(0);
   const [selectedItem, setSelectedItem] = useState(null);
   const [totalSales, setTotalSales] = useState(0);
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
-  if (loading) return <div>Loading...</div>;
   if (!user) {
     navigate("/login");
   }
@@ -40,57 +41,11 @@ const MainCustomerBehaviour = () => {
               <CustomersSegment />
             </div>
         </div>
-        {/* <div className="firstChartSection ">
-          {
-            data && <div className="flex gap-16 insideFirstSec">
-              <ShopifyCustomerTable data={data} barName={barName}/>
-            </div>
-          }
-        </div>
-        {user.email === "warehousepro@gmail.com" ? (
-          <div className="firstChartSection">
-            <WarehouseproCat
-              setSelectedCategory={setSelectedCategory}
-              setTotalSales={setTotalSales}
-            />
-            <WarehouseproCategory totalSales={totalSales} />
-          </div>
-        ) : (
-          <div className="cohortChartSection ">
+        <div className="cohortChartSection ">
             <Sales />
             <Engagement />
             
           </div>
-        )}
-        {selectedItem?.category === selectedCategory &&
-        user.email === "warehousepro@gmail.com" ? (
-          <div className="firstChartSection">
-            <ClientData selectedItem={selectedItem} />
-          </div>
-        ) : null}
-        {user.email === "warehousepro@gmail.com" && (
-          <div>
-            <div className="firstChartSection">
-              <CustomerTable
-                setSelectedItem={setSelectedItem}
-                selectedCategory={selectedCategory}
-                customerTable={"categoryTable"}
-              />
-            </div>
-            <div className="clientSection">
-              <ActiveCohort
-                setCohortYear={setCohortYear}
-                setActiveYear={setActiveYear}
-              />
-            </div>
-            <div className="firstChartSection">
-              <DataTable cohortYear={cohortYear} activeYear={activeYear} />
-            </div>
-            <div className="clientSection">
-              <Cohorts />
-            </div>
-          </div>
-        )} */}
 
       </div>
     </div>

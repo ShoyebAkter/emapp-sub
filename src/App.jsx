@@ -13,6 +13,7 @@ import MainCustomerBehaviour from './Pages/CustomerBehaviour/MainCustomerBehavio
 import MainCampaignResult from './Pages/CampaignResult/MainCampaignResult'
 import MainSocialMedia from './Pages/SocialMedia/MainSocialMedia'
 import CampaignDesign from './Pages/CampaignDesign/CampaignDesign'
+import SettingsPage from './Pages/Settings/SettingsPage'
 
 function App() {
   const [user] = useAuthState(auth);
@@ -31,6 +32,7 @@ function App() {
         <Route exact path="/campaignResult" element={<MainCampaignResult />} />
         <Route exact path="/socialMedia" element={<MainSocialMedia />} />
         <Route exact path="/campaignerdesign" element={<CampaignDesign />} />
+        <Route exact path="/settings" element={<SettingsPage />} />
       </Routes>
     </>
   )

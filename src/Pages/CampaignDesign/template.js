@@ -135,66 +135,7 @@ const handler = async (req, res) => {
                 },
               ],
             },
-            {
-              type: "hero",
-              data: {
-                value: {},
-              },
-              attributes: {
-                "background-color": "#ffffff",
-                "background-position": "center center",
-                mode: "fluid-height",
-                padding: "180px 0px 200px 0px",
-                "vertical-align": "top",
-                "background-url":
-                  "https://i.ibb.co/h87pTtF/Logo-Vertical-Green.png",
-              },
-              children: [
-                {
-                  type: "text",
-                  data: {
-                    value: {
-                      content: "",
-                    },
-                  },
-                  attributes: {
-                    padding: "10px 25px 10px 25px",
-                    align: "center",
-                    color: "black",
-                    "font-size": "45px",
-                    "line-height": "45px",
-                  },
-                  children: [],
-                },
-                {
-                  type: "text",
-                  data: {
-                    value: {
-                      content:
-                        "<div></div><div><br></div>",
-                    },
-                  },
-                  attributes: {
-                    align: "center",
-                    "background-color": "#414141",
-                    color: "black",
-                    "font-weight": "normal",
-                    "border-radius": "3px",
-                    padding: "10px 25px 10px 25px",
-                    "inner-padding": "10px 25px 10px 25px",
-                    "line-height": "1.5",
-                    target: "_blank",
-                    "vertical-align": "middle",
-                    border: "none",
-                    "text-align": "center",
-                    href: "#",
-                    "font-size": "14px",
-                  },
-                  children: [],
-                },
-                
-              ],
-            },
+            
             {
               type: "section",
               data: {

@@ -5,12 +5,7 @@ import tailwindcss from 'tailwindcss'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  css: {
-    postcss: {
-      plugins: [tailwindcss()],
-    },
-  },
   optimizeDeps: {
-    include: ['react-apexcharts'],
+    include: ['react-apexcharts','jquery', 'popper.js', 'bootstrap'],
   }
 })
